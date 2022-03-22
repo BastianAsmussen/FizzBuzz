@@ -8,7 +8,7 @@ public class FizzBuzz {
 
         try {
 
-            startGame((args.length > 0) ? Integer.parseInt(args[0]) : 100);
+            startGame(args.length > 0 ? Integer.parseInt(args[0]) : 100);
 
         } catch (NumberFormatException nFE) {
 
