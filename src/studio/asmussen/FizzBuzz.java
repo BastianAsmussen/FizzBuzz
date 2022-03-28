@@ -1,5 +1,7 @@
 package studio.asmussen;
 
+import java.text.DecimalFormat;
+
 public class FizzBuzz {
 
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class FizzBuzz {
 
         try {
 
-            startGame(args.length > 0 ? Integer.parseInt(args[0]) : 100);
+            startGame((args.length > 0) ? Integer.parseInt(args[0]) : 100);
 
         } catch (NumberFormatException nFE) {
 
@@ -23,14 +25,15 @@ public class FizzBuzz {
 
     public static void startGame(int n) {
 
+        final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("###,###,###");
+
         for (int i = 1; i <= n; i++) {
 
             StringBuilder output = new StringBuilder();
 
             if (i % 3 == 0) output.append("Fizz");
             if (i % 5 == 0) output.append("Buzz");
-
-            if (String.valueOf(output).equalsIgnoreCase("")) output = new StringBuilder(String.valueOf(i));
+            if (String.valueOf(output).equalsIgnoreCase("")) output = new StringBuilder(DECIMAL_FORMAT.format(i));
 
             System.out.println(output);
         }
